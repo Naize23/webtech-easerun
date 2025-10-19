@@ -1,0 +1,487 @@
+<html lang="en">
+
+<head>
+    <title>About Page</title>
+        <!-- Preconnect (before any external resources) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload key CSS files for faster rendering -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" as="style">
+
+    <!-- Main Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Spectral+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        html {
+            scrollbar-gutter: stable; 
+        }
+        .Thumbnail img {
+            height: 400px;
+            width: 560px;
+            border-radius: 10px;
+            background: url(Images/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        }
+
+        body {
+
+            background: #f8f8f8;
+            padding: 0;
+            margin: 0;
+
+        }
+        .navbar{
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar-nav .nav-item {
+        margin: 0 15px;
+        }
+        .navbar-brand{
+            font-size: 30px;
+            font-weight: bold;
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+        }
+        .navbar-brand:hover {
+            color: #F2F2F2;
+            transition: color 0.3s ease; 
+        }
+        .navbar-brand:focus{
+            color: #F2F2F2;
+        }
+        .navbar-toggler {
+        border-color: #F2F2F2; 
+        }
+
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,242,242, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .nav-link{
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+            
+        }
+        .nav-link:focus,
+        .nav-link:hover {
+        color: #4c6473; /* Hover color */
+        border-bottom: 2px solid #f2f2f2;
+        transition: 0.3 ease;
+        }
+
+        .nav-link.active,
+        .nav-link:active {
+        color: #4c6473; 
+        font-weight: bold;
+        border-bottom: 2px solid #4c6473; 
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-icon i {
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .cart-icon i:hover {
+            transform: scale(1.2);
+            color: #4c6473; /* Matches your hover accent */
+        }
+
+        .brk {
+            height: 4px;
+            display: block;
+            border-radius: 4px;
+            width: 200px;
+            background: #7693A6;
+            margin: 10px auto;
+            margin-bottom: -6px;
+
+        }
+
+        .brk2 {
+            height: 4px;
+            display: block;
+            border-radius: 4px;
+            width: 30px;
+            background: #7693A6;
+            margin: 10px auto;
+            margin-bottom: 20px;
+        }
+
+        .Thumbnail h2 {
+            font-family: "Spectral SC", serif;
+            padding-top: -30px;
+            text-align: center;
+
+        }
+        h1 {
+            font-family: "Spectral SC", serif;
+            text-align: center;
+        }
+
+        .right-col p {
+            font-family: "Montserrat", sans-serif;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .row .right-col {
+            padding: 40px;
+
+        }
+
+        .cards {
+            padding: 0;
+            border-radius: 0;
+            border: none;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+                0 3px 1px -2px rgba(0, 0, 0, .2),
+                0 1px 5px 0 rgba(0, 0, 0, .12)
+        }
+
+        .cards h3 {
+            font-size: 26;
+            color: #3B4E59
+        }
+        .card-description p{
+            border-top: #3B4E59;
+            border: 1px;
+        }
+        .cards h3,
+        .card-description {
+            margin: 0;
+            padding: 8px 0;
+            border-bottom: solid 1px #eee;
+            text-align: center
+        }
+
+        .card-bg {
+            width: 100%;
+            height: 200px;
+            background-color: #171F26;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+
+        .team-pic {
+            display: block;
+            margin: -75px auto 0;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4),
+                0 2px 10px 0 rgba(0, 0, 0, .5);
+            transition: all .2s ease-out;
+        }
+
+        .team-row {
+            padding-top: 70px;
+            padding-bottom: 50px;
+        }
+
+        .visit-me {
+            font-size: 18px;
+            margin-top: 10px;
+            padding-top: 10px;
+            line-height: 1.8;
+        }
+
+        .visit-me i {
+            font-size: 22px;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .visit-me i:hover {
+            transform: scale(1.3);
+            color: #4267B2;
+            
+        }
+
+                .footer-link {
+        display: block;
+        color: #cccccc;
+        text-decoration: none;
+        margin-bottom: 6px;
+        transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+        color: #ffffff;
+        }
+
+        .footer-text {
+        color: #d1d1d1;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        }
+
+        .social-icon {
+        color: #cccccc;
+        font-size: 20px;
+        transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+        color: #ffffff;
+        }
+
+        footer h5 {
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 1.2rem;
+        font-family: "Spectral SC", serif;
+        }
+
+        footer p, a{
+        color: #999999;
+        font-size: 0.9rem;
+        font-family: "Montserrat", sans-serif;
+        }
+
+        hr {
+        border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 767px) {
+        footer {
+            text-align: center;
+        }
+        .d-flex {
+            justify-content: center !important;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <!--Navigation Bar
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">EaseRun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" target="_self">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+-->
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Brand (left) -->
+    <a href="#" class="navbar-brand">EaseRun</a>
+
+    <!-- Mobile Toggle Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links (centered) -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Cart Icon (right) -->
+      <div class="cart-icon mt-3 mt-lg-0 ms-lg-3">
+        <a href="#cart" class="text-decoration-none">
+          <i class="fa-solid fa-cart-shopping text-white fs-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="container-lg mt-5 parent">
+        <div class="row" style="padding-top: 30px;">
+            <div class="col-md-6 left-col mt-5">
+                <div class="Thumbnail">
+                    <img src="img/bg.jpg" />
+                </div>
+            </div>
+
+            <div class="col-md-6 right-col" style="padding-top:100px;">
+                <h2 style="text-align: center; font-family: Spectral SC, serif; font-weight: bold;" class="px-5">About Us</h2>
+                <span class="brk"></span>
+                <p style="font-weight: 500;" class="px-5">
+                    EaseRun was founded by runners who knew the struggle of choosing between expensive comfort and
+                    painful,
+                    affordable shoes. We experienced the blisters and aches firsthand and believed no one should have to
+                    compromise. That's why we created EaseRun, a brand dedicated to delivering exceptional comfort and
+                    support for every runner. We use innovative, purpose-built materials to make running feel softer and
+                    easier. By selling directly to you, we provide this premium comfort at a radically affordable price.
+                    We
+                    built the shoes we always needed, so you can focus on the joy of the run.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid team-row" style="background-color: #eee;">
+        <div class="container" style="margin-top:-40px">
+            <h1 style="font-weight:700">The People behind It</h1>
+            <span class="brk2" style="margin-bottom: 20px;"></span>
+            <div class="row g-5">
+                <div class="col-sm-6 col-md-4">
+                    <div class="cards">
+                        <div class="card-bg"></div>
+                        <img class="team-pic" src="img/p3.jpg">
+                        <div class="caption">
+                            <h3>Rinel Abarquez</h3>
+                            <p class="card-description">Founder, CEO, Front-end developer</p>
+                            <p class="card-description visit-me">
+                                Visit me here →
+                                <a href="https://www.facebook.com/rinel.abarquez.5" target="_blank"
+                                    class="text-decoration-none text-primary">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="cards">
+                        <div class="card-bg"></div>
+                        <img class="team-pic" src="img/p2.jpg">
+                        <div class="caption">
+                            <h3>John Saint Alegado</h3>
+                            <p class="card-description">Co-Founder, Back-end developer</p>
+                            <p class="card-description visit-me">
+                                Visit me here →
+                                <a href="https://www.facebook.com/jsaint.alegado13" target="_blank"
+                                    class="text-decoration-none text-primary">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="cards">
+                        <div class="card-bg"></div>
+                        <img class="team-pic" src="img/p1.jpg">
+                        <div class="caption">
+                            <h3>Edrian Sayaboc</h3>
+                            <p class="card-description">Co-Founder,Back-end developer</p>
+                            <p class="card-description visit-me">
+                                Visit me here →
+                                <a href="https://www.facebook.com/Driantzy06" target="_blank"
+                                    class="text-decoration-none text-primary">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+            <!-- About EaseRun -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">About EaseRun</h5>
+                <p class="footer-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo laboriosam tempore. 
+                We help you move faster and perform better.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="#" class="footer-link">Home</a></li>
+                <li><a href="#" class="footer-link">About Us</a></li>
+                <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Services</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="#" class="footer-link">Service 1</a></li>
+                <li><a href="#" class="footer-link">Service 2</a></li>
+                <li><a href="#" class="footer-link">Service 3</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="col-md-3">
+                <h5 class="mb-3">Follow Us</h5>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Copyright -->
+            <hr class="my-4 text-secondary opacity-25">
+            <div class="row">
+            <div class="col text-center">
+                <p class="mb-0 text-secondary">&copy; 2025 EaseRun. All rights reserved.</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

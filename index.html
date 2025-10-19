@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+     <!-- Preconnect (before any external resources) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Preload key CSS files for faster rendering -->
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" as="style">
+
+        <!-- Main Stylesheets -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Spectral+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+-->
+
+      <!--FONTS
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+-->
+      <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        html {
+        scrollbar-gutter: stable; 
+        }
+        .navbar{
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar-brand{
+            font-size: 30px;
+            font-weight: bold;
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+        }
+        .navbar-brand:hover {
+            color: #F2F2F2;
+            transition: color 0.3s ease; 
+        }
+        .navbar-brand:focus{
+            color: #F2F2F2;
+        }
+        .navbar-toggler {
+        border-color: #F2F2F2; 
+        }
+
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,242,242, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        .nav-link{
+            color: #f2f2f2;
+            font-family: "Montserrat", sans-serif;
+            
+        }
+        .navbar-nav .nav-item {
+        margin: 0 15px;
+        }
+        .nav-link:focus,
+        .nav-link:hover {
+        color: #4c6473; /* Hover color */
+        border-bottom: 2px solid #f2f2f2;
+        transition: 0.3 ease;
+        }
+
+        .nav-link.active,
+        .nav-link:active {
+        color: #4c6473; 
+        font-weight: bold;
+        border-bottom: 2px solid #4c6473; 
+        }
+
+        .cart-icon {
+        display: flex;
+        align-items: center;
+        }
+
+        .cart-icon i {
+        transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .cart-icon i:hover {
+        transform: scale(1.2);
+        color: #4c6473; 
+        }
+
+
+
+        #hero-section{
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-item{
+            height: 100vh;
+            min-height: 600px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .carousel-item .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .carousel-caption{
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .hero-text h1.head-1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: #f2f2f2;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            font-family: "Spectral SC", serif;
+        }
+        .hero-text h2.head-2{
+            font-size: 3rem;
+            font-weight: 600;
+            color: #f2f2f2;
+            margin-bottom: 0.5rem;
+        }
+        .hero-text h3.head-3{
+            font-size: 2rem;
+            font-weight: 400;
+            color: #f8f9fa;
+            margin-bottom: 1rem;
+        }
+        .hero-text .category span{
+            font-size: 1.2rem;
+            color: #f2f2f2;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .hero-text .btn{
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: 0.3s ease;
+        }
+        .btn{
+            background-color: #1F2226;
+            color: #f2f2f2;
+        }
+        .hero-text .btn:hover{
+            background-color: #fff;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+.section-padding {
+  padding: 60px 40px;
+  background-color: #1F2226;
+  text-align: left;
+}
+
+.section-padding h2 {
+  font-size: 100px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  padding: 20px 0;
+  font-family: "Spectral SC", serif;
+  color: #f2f2f2;
+}
+
+.section-padding p {
+  font-size: 25px;
+  margin-top: 30px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  color: #f2f2f2;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 992px) { /* tablets */
+  .section-padding h2 {
+    font-size: 70px;
+    text-align: center;
+  }
+  .section-padding p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) { /* small tablets & landscape phones */
+  .section-padding h2 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .section-padding p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) { /* mobile phones */
+  .section-padding {
+    padding: 40px 10px;
+  }
+
+  .section-padding h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .section-padding p {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+  }
+}
+        @media(max-width: 768px){
+            .hero-text h1.head-1{
+                font-size: 2.5rem;
+            }
+            .hero-text h2.head-2{
+                font-size: 2rem;
+            }
+            .hero-text h3.head-3{
+                font-size: 1.5rem;
+            }
+            .hero-text .btn{
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+        }
+        #best p{
+            color: black;
+        }
+        .best-seller{
+            background-color: #AEB5BF;
+        }
+        .container .best{
+            font-size: 50px;
+            padding: 50px;
+            text-align: center;
+            color: #000;
+            font-weight: 700;
+            font-family: "Spectral SC", serif;
+            
+        }
+        .container .btn{
+            padding: 12px 35px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: 0.3s ease;
+        }
+        .container .btn:hover{
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+        .card {
+            height: 100%; /* Let cards stretch evenly inside columns */
+        }
+
+        .card-img-top {
+            height: 250px; /* Set a fixed height for all images */
+            object-fit: cover; /* Crops images to fit nicely */
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Evenly space title and text */
+            height: 200px; /* Optional, ensures equal text area height */
+        }
+
+        .footer-link {
+        display: block;
+        color: #cccccc;
+        text-decoration: none;
+        margin-bottom: 6px;
+        transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+        color: #ffffff;
+        }
+
+        .footer-text {
+        color: #d1d1d1;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        }
+
+        .social-icon {
+        color: #cccccc;
+        font-size: 20px;
+        transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+        color: #ffffff;
+        }
+
+        footer h5 {
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        font-size: 1.2rem;
+        font-family: "Spectral SC", serif;
+        }
+
+        footer p, a{
+        color: #999999;
+        font-size: 0.9rem;
+        font-family: "Montserrat", sans-serif;
+        }
+
+        hr {
+        border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 767px) {
+        footer {
+            text-align: center;
+        }
+        .d-flex {
+            justify-content: center !important;
+        }
+        }
+
+
+        #ads{
+            background-color: #1F2226;
+        }
+        #ads h3{
+            font-size: 70px;
+            font-weight: 400;
+            font-family: "Spectral SC", serif;
+        }
+        #ads h3, p{
+            color: #f2f2f2
+        }
+        video{
+            width: 200px;
+            height: 500px;
+        }
+      </style>
+</head>
+<body>
+    <!--Navigation Bar
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">EaseRun</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" target="_self">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+-->
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Brand (left) -->
+            <a href="#" class="navbar-brand">EaseRun</a>
+
+            <!-- Mobile Toggle Button -->
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links (centered) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Cart Icon (right) -->
+            <div class="cart-icon mt-3 mt-lg-0 ms-lg-3">
+                <a href="#cart" class="text-decoration-none">
+                <i class="fa-solid fa-cart-shopping text-white fs-4"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="hero-section">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <!--Indicators-->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+
+            <!--Slides-->
+            <div class="carousel-inner">
+
+                <!--Slide 1-->
+                <div class="carousel-item active h-100" style="background-image: url('img/c2.jpg')">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="hero-text">
+                            <h1 class="head-1">Lorem ipsum.</h1>
+                            <h2 class="head-2">lorem</h2>
+                            <h3 class="head-3">Lorem, ipsum.</h3>
+                            <p class="category"><span>Explore the latest trends</span></p>  
+                            <a href="#products" class="btn btn-lg">Shop Collection</a>
+                        </div>
+                    </div>
+                </div>
+                 <!--Slide 2-->
+                <div class="carousel-item h-100" style="background-image: url('img/c1.png')">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="hero-text">
+                            <h1 class="head-1">Lorem ipsum.</h1>
+                            <h2 class="head-2">lorem</h2>
+                            <h3 class="head-3"><strong>50%</strong>Off</h3>
+                            <p class="category"><span>Lorem ipsum dolor sit amet consectetur adipisicing.</span></p>
+                            <a href="#products" class="btn btn-lg">Exlpore Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Slide 3-->
+                <div class="carousel-item h-100" style="background-image: url('img/c3.jpg')">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center">
+                        <div class="hero-text">
+                            <h1 class="head-1">lorem</h1>
+                            <h2 class="head-2">Lorem, ipsum.</h2>
+                            <h3 class="head-3">Up to<strong>30%</strong>Off</h3>
+                            <p class="category"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat?</span></p>
+                            <a href="#contact" class="btn btn-lg">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Navigation Controls-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-12 col-md-8 col-sm-6 ">
+                <h2 class="text-start">Unleash Your Pace</h2>
+                <div class="d-flex justify-content-end">
+                    <p class="lead text-end">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis doloribus accusantium mollitia placeat.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="best-seller" id="best">
+        <div class="container">
+            <div class="row">
+                <h2 class="best">Best Seller</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/pin1.jpg" alt="shoe" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, laborum?</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/pin2.jpg" alt="shoe" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, laborum?</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-sm-6 col-md-4">
+                    <div class="card h-100">
+                        <img src="img/pin3.jpg" alt="shoe" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Shoe</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, laborum?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="d-flex justify-content-center align-items-center" style="height: 100px;">
+                    <button type="button" class="btn">See more</button>
+                </div>
+        </div>
+    </div>
+
+        <div class="container-fluid" id="ads">
+            <div class="row">
+                <div class="col-12 col-md-8 px-2 my-3">
+                    <video autoplay muted loop id="running" class="w-100 h-100 object-fit-cover">
+                        <source src="img/vid2.mp4" type="video/mp4"/>
+                    </video>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-start text-start ps-4">
+                    <h3>Find Your Ease in Every Stride</h3>
+                    <p>Lorem, ipsum dolor.</p>
+                </div>
+            </div>
+        </div>
+
+
+    <footer class="bg-black text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+            <!-- About EaseRun -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">About EaseRun</h5>
+                <p class="footer-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quo laboriosam tempore. 
+                We help you move faster and perform better.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="#" class="footer-link">Home</a></li>
+                <li><a href="#" class="footer-link">About Us</a></li>
+                <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <h5 class="mb-3">Services</h5>
+                <ul class="list-unstyled footer-links">
+                <li><a href="#" class="footer-link">Service 1</a></li>
+                <li><a href="#" class="footer-link">Service 2</a></li>
+                <li><a href="#" class="footer-link">Service 3</a></li>
+                </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="col-md-3">
+                <h5 class="mb-3">Follow Us</h5>
+                <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Copyright -->
+            <hr class="my-4 text-secondary opacity-25">
+            <div class="row">
+            <div class="col text-center">
+                <p class="mb-0 text-secondary">&copy; 2025 EaseRun. All rights reserved.</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
